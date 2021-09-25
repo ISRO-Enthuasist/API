@@ -13,7 +13,7 @@ app.use("/", launch_vehicles);
 app.use("/", spacecrafts_api);
 
 app.listen(
-    8080, () => {
+    5050, () => {
         console.log("Server started on port 8080 check http://localhost:8080");
     }
 )
