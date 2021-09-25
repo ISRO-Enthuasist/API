@@ -12,8 +12,7 @@ app.use("/", customers_api);
 app.use("/", launch_vehicles);
 app.use("/", spacecrafts_api);
 
-app.listen(
-    5050, () => {
-        console.log("Server started on port 8080 check http://localhost:8080");
-    }
-)
+const server = app.listen(process.env.PORT || 5000, () => {
+    const port = server.address().port;
+    console.log(`Express is working on port ${port}`);
+});
