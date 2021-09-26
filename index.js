@@ -13,7 +13,7 @@ app.use("/", launch_vehicles);
 app.use("/", spacecrafts_api);
 app.get("/", (req, res) => {
     res.setHeader('Cache-Control', 'public, max-age=86400'); // add caching
-    res.sendFile("index.html")
+    res.sendFile(__dirname + "/index.html")
 })
 
 const server = app.listen(process.env.PORT || 5000, () => {
