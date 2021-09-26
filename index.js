@@ -11,6 +11,10 @@ app.use("/", centers_api);
 app.use("/", customers_api);
 app.use("/", launch_vehicles);
 app.use("/", spacecrafts_api);
+app.get("/", (req, res) => {
+    res.setHeader('Cache-Control', 'public, max-age=86400'); // add caching
+    res.sendFile("index.html")
+})
 
 const server = app.listen(process.env.PORT || 5000, () => {
     const port = server.address().port;
